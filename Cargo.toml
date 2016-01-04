@@ -1,6 +1,6 @@
 [package]
 name = "sysconf"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Gary M. Josack <gary@byoteki.com>"]
 repository = "https://github.com/gmjosack/sysconf.rs"
 documentation = "http://gmjosack.github.io/sysconf.rs"
@@ -8,5 +8,5 @@ license = "Apache-2.0"
 description = "Small safe wrapper around sysconf"
 
 [dependencies]
-libc = "*"
+libc = "0.2.4"
 
