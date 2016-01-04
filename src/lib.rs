@@ -1,9 +1,7 @@
 extern crate libc;
 
-use libc::funcs::posix88::unistd;
-use libc::types::os::arch::c95::c_int;
 use std::result;
-
+use self::libc::c_int;
 
 pub type Result<T> = result::Result<T, SysconfError>;
 
@@ -73,8 +71,8 @@ pub enum SysconfVariable {
 }
 
 pub fn sysconf(name: SysconfVariable) -> Result<i64> {
-    match unsafe { unistd::sysconf(name as c_int) } {
-        -1   => Err(SysconfError::Invalid),
-        ret  => Ok(ret),
+    match unsafe { libc::sysconf(name as c_int) } {
+        -1  => Err(SysconfError::Invalid),
+        ret => Ok(ret),
     }
 }
