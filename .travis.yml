@@ -33,4 +33,4 @@ notifications:
 env:
   global:
     # Override the default `--features unstable` used for the nightly branch
-    - TRAVIS_CARGO_NIGHTLY_FEATURE=nightly
+    - TRAVIS_CARGO_NIGHTLY_FEATURE=""
