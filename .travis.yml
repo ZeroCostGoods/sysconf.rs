@@ -1,30 +1,30 @@
+sudo: false
 language: rust
 
+# Run builds for all the trains (and more)
 rust:
-  - 1.1.0
-  - beta
   - nightly
+  - beta
+  - stable
+  # Minimum usable version of rust required.
+  - 1.0.0
+
+# Load travis-cargo
+before_script:
+  - |
+      pip install 'travis-cargo<0.2' --user &&
+      export PATH=$HOME/.local/bin:$PATH
 
 os:
   - linux
 
 script:
-  - cargo build --verbose
-  - cargo test --verbose
-  - cargo doc
+  - |
+      travis-cargo build &&
+      travis-cargo test &&
+      travis-cargo bench &&
+      travis-cargo --only stable doc
 
 notifications:
   email:
     on_success: never
-
-env:
-  global:
-    secure: rJEm1EeDUWIz6YDlM7QbGFEqvsssy0J7Xbm4DZENCj+eA7rbGSidZ2NE//NkpjwjYlbywDnFO2qQ3NDkCidPLCW1Vio/Zylc+MFPz/yo33OyJI6zZK/6rYgR/US9ef5lnOCkS9+AqrHJPcbLTIKI1D2I1YGu5UCg4VCvS9dG1CZHrVYGhBg5/h2pEkOM+9yjBHdteCYC5usk1FIljL02ZncfEQcCY1aOj1HH+edUg4CHYQYYmm++zh2WgWNEP54QBAJy49lOyohXucOQ1fSBFI0Q5GlOKdjzJ43L/rcmTCWEIHQiXexbiEGmBNVU9vqhuYwQXVYyCWmA9pXQrn6tnCkVzthiylR94p6VDe5Q5YV+L8wF2JtfPVzutCKkvkglQHSip2RYb3kzFuk4Ikz7lU/VaCPNGvF84z/EAjL5KtkgacyfREa5ntY5SzQZNZbmL+ySNnRXUD7LUGaAEpDQwaua+g8oHwJObWZf+o3wXu56cxPaVVZQA6M6cJpCb8Iqi9KKHgBpv38KlZ0JmUPHzCJLBmuk1D0VwMFpUPJrJ7c7HsrLJO1Byd6p42SXT7PwqDlBcXFr/0S6R2H4VQw+wypGr/boHNboKFZTy+EAcYkHOOAAr6ODx36I8SJ+Z1h3tJQHQ8dQr+sui10kYNpbW8jaMMO9w8wfmb7X19Ipjxo=
-
-after_success: |
-  [ $TRAVIS_BRANCH = master ] &&
-  [ $TRAVIS_PULL_REQUEST = false ] &&
-  echo '<meta http-equiv=refresh content=0;url=sysconf/index.html>' > target/doc/index.html &&
-  pip install ghp-import --user $USER &&
-  $HOME/.local/bin/ghp-import -n target/doc &&
-  git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
