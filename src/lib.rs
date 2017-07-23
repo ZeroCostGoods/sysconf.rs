@@ -1,7 +1,7 @@
 extern crate libc;
 
 use std::result;
-use self::libc::c_int;
+use self::libc::{c_int, c_long};
 
 pub type Result<T> = result::Result<T, SysconfError>;
 
@@ -70,9 +70,21 @@ pub enum SysconfVariable {
     ScXbs5LpbigOffbig = 128,
 }
 
-pub fn sysconf(name: SysconfVariable) -> Result<i64> {
+pub fn sysconf(name: SysconfVariable) -> Result<c_long> {
     match unsafe { libc::sysconf(name as c_int) } {
         -1  => Err(SysconfError::Invalid),
         ret => Ok(ret),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+
+    use super::*;
+
+    #[test]
+    fn test_valid_sysconf() {
+        let result = sysconf(SysconfVariable::ScPagesize);
+        assert!(result.is_ok())
     }
 }
