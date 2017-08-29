@@ -7,7 +7,7 @@ rust:
   - beta
   - stable
   # Minimum usable version of rust required.
-  - 1.0.0
+  - 1.8.0
 
 # Load travis-cargo
 before_script:
@@ -22,6 +22,7 @@ script:
   - |
       travis-cargo build &&
       travis-cargo test &&
+      travis-cargo --only nightly test -- --features nightly &&
       travis-cargo bench &&
       travis-cargo --only stable doc
 
