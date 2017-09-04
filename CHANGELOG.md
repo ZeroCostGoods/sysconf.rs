@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.3.1] - 2017-09-04
+
+### Fixed
+- Added missing dependencies for Windows
+
+### Added
+- Integration with AppVeyor to catch build problems for Windows
+
 ## [0.3.0] - 2017-08-29
 
 ### Added
