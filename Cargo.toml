@@ -12,8 +12,10 @@ nightly = ["lazy_static"]
 
 [dependencies]
 errno = "0.2"
+kernel32-sys = "0.2.2"
 # lazy_static only supports no-std on nightly, so it's optional and enabled
 # by the 'nightly' feature
 lazy_static = { version = "0.2", features = ["spin_no_std"], optional = true }
 # use no_std libc
 libc = { version = "0.2", default-features = false }
+winapi = "0.2.8"
