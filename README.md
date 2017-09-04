@@ -1,5 +1,7 @@
 # sysconf
 [![Build Status](https://travis-ci.org/ZeroCostGoods/sysconf.rs.svg?branch=master)](https://travis-ci.org/ZeroCostGoods/sysconf.rs)
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/au5vexr6befnymiu?svg=true
+)](https://ci.appveyor.com/project/ZeroCostGoods/sysconf-rs)
 [![Crates.io](https://img.shields.io/crates/v/sysconf.svg)](https://crates.io/crates/sysconf)
 [![Docs](https://docs.rs/sysconf/badge.svg)](https://docs.rs/sysconf)
 
