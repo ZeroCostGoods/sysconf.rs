@@ -1,3 +1,5 @@
+#[cfg(windows)]
+extern crate kernel32;
 #[cfg(target_os = "linux")]
 extern crate libc;
 #[cfg(target_os = "linux")]
@@ -392,7 +394,7 @@ fn priv_default_hugepage() -> Option<usize> {
 
 #[cfg(windows)]
 fn priv_default_hugepage() -> Option<usize> {
-    use kernel32::GetLargePageMinimum;
+    use self::kernel32::GetLargePageMinimum;
     unsafe {
         let size = GetLargePageMinimum();
         // While u64 (GetLargePageMinimum's return type) might be larger than usize (on 32-bit
