@@ -350,7 +350,7 @@ fn priv_hugepage_supported(exp: usize) -> bool {
         // eprintln!("error: {:?}", e);
         assert!(e == ENOENT || e == ENOMEM);
         if e == ENOENT {
-            assert!(false, "path: {}, ENOENT", path);
+            assert_ne!(exp, 21, "path: {}, ENOENT", path);
             // eprintln!("ENOENT");
             // Maybe we're on an older kernel that doesn't support /sys/kernel/mm/hugepages;
             // it will still support /proc/meminfo, which is what default_hugepage uses.
