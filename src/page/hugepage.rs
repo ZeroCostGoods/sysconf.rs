@@ -342,20 +342,22 @@ fn priv_hugepage_supported(exp: usize) -> bool {
 
     let path = get_linux_hugepage_directory!(exp);
 
-    eprintln!("path: {}", path);
+    // eprintln!("path: {}", path);
     let mut s = unsafe { uninitialized::<stat>() };
     if unsafe { lstat(path.as_ptr() as *const i8, &mut s) } < 0 {
         // No other error should be possible here (see man 2 lstat)
         let e = errno().0;
-        eprintln!("error: {:?}", e);
+        // eprintln!("error: {:?}", e);
         assert!(e == ENOENT || e == ENOMEM);
         if e == ENOENT {
-            eprintln!("ENOENT");
+            assert!(false, "path: {}, ENOENT", path);
+            // eprintln!("ENOENT");
             // Maybe we're on an older kernel that doesn't support /sys/kernel/mm/hugepages;
             // it will still support /proc/meminfo, which is what default_hugepage uses.
             default_hugepage() == Some(1 << exp)
         } else {
-            eprintln!("ENOMEM");
+            assert!(false, "path: {}, ENOMEM", path);
+            // eprintln!("ENOMEM");
             false
         }
     } else {
