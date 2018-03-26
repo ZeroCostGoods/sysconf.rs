@@ -20,6 +20,7 @@ os:
 
 script:
   - |
+      ls -lR /sys/kernel/mm/hugepages/ &&
       travis-cargo build &&
       travis-cargo test &&
       travis-cargo --only nightly test -- --features nightly &&
