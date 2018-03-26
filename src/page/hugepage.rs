@@ -427,7 +427,7 @@ mod tests {
                 Err(_) => false,
             };
 
-            assert_eq!(supported, hugepage_supported(size));
+            assert_eq!(supported, hugepage_supported(size), "{}-byte pages", size);
         }
     }
 }
