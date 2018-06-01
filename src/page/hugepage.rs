@@ -239,28 +239,28 @@ mod lazy {
 macro_rules! get_linux_hugepage_directory {
     ($size:expr) => (
         match $size {
-            10 => "/sys/kernel/mm/hugepages/hugepages-1kB",
-            11 => "/sys/kernel/mm/hugepages/hugepages-2kB",
-            12 => "/sys/kernel/mm/hugepages/hugepages-4kB",
-            13 => "/sys/kernel/mm/hugepages/hugepages-8kB",
-            14 => "/sys/kernel/mm/hugepages/hugepages-16kB",
-            15 => "/sys/kernel/mm/hugepages/hugepages-32kB",
-            16 => "/sys/kernel/mm/hugepages/hugepages-64kB",
-            17 => "/sys/kernel/mm/hugepages/hugepages-128kB",
-            18 => "/sys/kernel/mm/hugepages/hugepages-256kB",
-            19 => "/sys/kernel/mm/hugepages/hugepages-512kB",
-            20 => "/sys/kernel/mm/hugepages/hugepages-1024kB",
-            21 => "/sys/kernel/mm/hugepages/hugepages-2048kB",
-            22 => "/sys/kernel/mm/hugepages/hugepages-4096kB",
-            23 => "/sys/kernel/mm/hugepages/hugepages-8192kB",
-            24 => "/sys/kernel/mm/hugepages/hugepages-16384kB",
-            25 => "/sys/kernel/mm/hugepages/hugepages-32768kB",
-            26 => "/sys/kernel/mm/hugepages/hugepages-65536kB",
-            27 => "/sys/kernel/mm/hugepages/hugepages-131072kB",
-            28 => "/sys/kernel/mm/hugepages/hugepages-262144kB",
-            29 => "/sys/kernel/mm/hugepages/hugepages-524288kB",
-            30 => "/sys/kernel/mm/hugepages/hugepages-1048576kB",
-            31 => "/sys/kernel/mm/hugepages/hugepages-2097152kB",
+            10 => "/sys/kernel/mm/hugepages/hugepages-1kB/",
+            11 => "/sys/kernel/mm/hugepages/hugepages-2kB/",
+            12 => "/sys/kernel/mm/hugepages/hugepages-4kB/",
+            13 => "/sys/kernel/mm/hugepages/hugepages-8kB/",
+            14 => "/sys/kernel/mm/hugepages/hugepages-16kB/",
+            15 => "/sys/kernel/mm/hugepages/hugepages-32kB/",
+            16 => "/sys/kernel/mm/hugepages/hugepages-64kB/",
+            17 => "/sys/kernel/mm/hugepages/hugepages-128kB/",
+            18 => "/sys/kernel/mm/hugepages/hugepages-256kB/",
+            19 => "/sys/kernel/mm/hugepages/hugepages-512kB/",
+            20 => "/sys/kernel/mm/hugepages/hugepages-1024kB/",
+            21 => "/sys/kernel/mm/hugepages/hugepages-2048kB/",
+            22 => "/sys/kernel/mm/hugepages/hugepages-4096kB/",
+            23 => "/sys/kernel/mm/hugepages/hugepages-8192kB/",
+            24 => "/sys/kernel/mm/hugepages/hugepages-16384kB/",
+            25 => "/sys/kernel/mm/hugepages/hugepages-32768kB/",
+            26 => "/sys/kernel/mm/hugepages/hugepages-65536kB/",
+            27 => "/sys/kernel/mm/hugepages/hugepages-131072kB/",
+            28 => "/sys/kernel/mm/hugepages/hugepages-262144kB/",
+            29 => "/sys/kernel/mm/hugepages/hugepages-524288kB/",
+            30 => "/sys/kernel/mm/hugepages/hugepages-1048576kB/",
+            31 => "/sys/kernel/mm/hugepages/hugepages-2097152kB/",
             _ => unreachable!(),
         }
     );
@@ -270,60 +270,60 @@ macro_rules! get_linux_hugepage_directory {
 macro_rules! get_linux_hugepage_directory {
     ($size:expr) => (
         match $size {
-            10 => "/sys/kernel/mm/hugepages/hugepages-1kB",
-            11 => "/sys/kernel/mm/hugepages/hugepages-2kB",
-            12 => "/sys/kernel/mm/hugepages/hugepages-4kB",
-            13 => "/sys/kernel/mm/hugepages/hugepages-8kB",
-            14 => "/sys/kernel/mm/hugepages/hugepages-16kB",
-            15 => "/sys/kernel/mm/hugepages/hugepages-32kB",
-            16 => "/sys/kernel/mm/hugepages/hugepages-64kB",
-            17 => "/sys/kernel/mm/hugepages/hugepages-128kB",
-            18 => "/sys/kernel/mm/hugepages/hugepages-256kB",
-            19 => "/sys/kernel/mm/hugepages/hugepages-512kB",
-            20 => "/sys/kernel/mm/hugepages/hugepages-1024kB",
-            21 => "/sys/kernel/mm/hugepages/hugepages-2048kB",
-            22 => "/sys/kernel/mm/hugepages/hugepages-4096kB",
-            23 => "/sys/kernel/mm/hugepages/hugepages-8192kB",
-            24 => "/sys/kernel/mm/hugepages/hugepages-16384kB",
-            25 => "/sys/kernel/mm/hugepages/hugepages-32768kB",
-            26 => "/sys/kernel/mm/hugepages/hugepages-65536kB",
-            27 => "/sys/kernel/mm/hugepages/hugepages-131072kB",
-            28 => "/sys/kernel/mm/hugepages/hugepages-262144kB",
-            29 => "/sys/kernel/mm/hugepages/hugepages-524288kB",
-            30 => "/sys/kernel/mm/hugepages/hugepages-1048576kB",
-            31 => "/sys/kernel/mm/hugepages/hugepages-2097152kB",
-            32 => "/sys/kernel/mm/hugepages/hugepages-4194304kB",
-            33 => "/sys/kernel/mm/hugepages/hugepages-8388608kB",
-            34 => "/sys/kernel/mm/hugepages/hugepages-16777216kB",
-            35 => "/sys/kernel/mm/hugepages/hugepages-33554432kB",
-            36 => "/sys/kernel/mm/hugepages/hugepages-67108864kB",
-            37 => "/sys/kernel/mm/hugepages/hugepages-134217728kB",
-            38 => "/sys/kernel/mm/hugepages/hugepages-268435456kB",
-            39 => "/sys/kernel/mm/hugepages/hugepages-536870912kB",
-            40 => "/sys/kernel/mm/hugepages/hugepages-1073741824kB",
-            41 => "/sys/kernel/mm/hugepages/hugepages-2147483648kB",
-            42 => "/sys/kernel/mm/hugepages/hugepages-4294967296kB",
-            43 => "/sys/kernel/mm/hugepages/hugepages-8589934592kB",
-            44 => "/sys/kernel/mm/hugepages/hugepages-17179869184kB",
-            45 => "/sys/kernel/mm/hugepages/hugepages-34359738368kB",
-            46 => "/sys/kernel/mm/hugepages/hugepages-68719476736kB",
-            47 => "/sys/kernel/mm/hugepages/hugepages-137438953472kB",
-            48 => "/sys/kernel/mm/hugepages/hugepages-274877906944kB",
-            49 => "/sys/kernel/mm/hugepages/hugepages-549755813888kB",
-            50 => "/sys/kernel/mm/hugepages/hugepages-1099511627776kB",
-            51 => "/sys/kernel/mm/hugepages/hugepages-2199023255552kB",
-            52 => "/sys/kernel/mm/hugepages/hugepages-4398046511104kB",
-            53 => "/sys/kernel/mm/hugepages/hugepages-8796093022208kB",
-            54 => "/sys/kernel/mm/hugepages/hugepages-17592186044416kB",
-            55 => "/sys/kernel/mm/hugepages/hugepages-35184372088832kB",
-            56 => "/sys/kernel/mm/hugepages/hugepages-70368744177664kB",
-            57 => "/sys/kernel/mm/hugepages/hugepages-140737488355328kB",
-            58 => "/sys/kernel/mm/hugepages/hugepages-281474976710656kB",
-            59 => "/sys/kernel/mm/hugepages/hugepages-562949953421312kB",
-            60 => "/sys/kernel/mm/hugepages/hugepages-1125899906842624kB",
-            61 => "/sys/kernel/mm/hugepages/hugepages-2251799813685248kB",
-            62 => "/sys/kernel/mm/hugepages/hugepages-4503599627370496kB",
-            63 => "/sys/kernel/mm/hugepages/hugepages-9007199254740992kB",
+            10 => "/sys/kernel/mm/hugepages/hugepages-1kB/",
+            11 => "/sys/kernel/mm/hugepages/hugepages-2kB/",
+            12 => "/sys/kernel/mm/hugepages/hugepages-4kB/",
+            13 => "/sys/kernel/mm/hugepages/hugepages-8kB/",
+            14 => "/sys/kernel/mm/hugepages/hugepages-16kB/",
+            15 => "/sys/kernel/mm/hugepages/hugepages-32kB/",
+            16 => "/sys/kernel/mm/hugepages/hugepages-64kB/",
+            17 => "/sys/kernel/mm/hugepages/hugepages-128kB/",
+            18 => "/sys/kernel/mm/hugepages/hugepages-256kB/",
+            19 => "/sys/kernel/mm/hugepages/hugepages-512kB/",
+            20 => "/sys/kernel/mm/hugepages/hugepages-1024kB/",
+            21 => "/sys/kernel/mm/hugepages/hugepages-2048kB/",
+            22 => "/sys/kernel/mm/hugepages/hugepages-4096kB/",
+            23 => "/sys/kernel/mm/hugepages/hugepages-8192kB/",
+            24 => "/sys/kernel/mm/hugepages/hugepages-16384kB/",
+            25 => "/sys/kernel/mm/hugepages/hugepages-32768kB/",
+            26 => "/sys/kernel/mm/hugepages/hugepages-65536kB/",
+            27 => "/sys/kernel/mm/hugepages/hugepages-131072kB/",
+            28 => "/sys/kernel/mm/hugepages/hugepages-262144kB/",
+            29 => "/sys/kernel/mm/hugepages/hugepages-524288kB/",
+            30 => "/sys/kernel/mm/hugepages/hugepages-1048576kB/",
+            31 => "/sys/kernel/mm/hugepages/hugepages-2097152kB/",
+            32 => "/sys/kernel/mm/hugepages/hugepages-4194304kB/",
+            33 => "/sys/kernel/mm/hugepages/hugepages-8388608kB/",
+            34 => "/sys/kernel/mm/hugepages/hugepages-16777216kB/",
+            35 => "/sys/kernel/mm/hugepages/hugepages-33554432kB/",
+            36 => "/sys/kernel/mm/hugepages/hugepages-67108864kB/",
+            37 => "/sys/kernel/mm/hugepages/hugepages-134217728kB/",
+            38 => "/sys/kernel/mm/hugepages/hugepages-268435456kB/",
+            39 => "/sys/kernel/mm/hugepages/hugepages-536870912kB/",
+            40 => "/sys/kernel/mm/hugepages/hugepages-1073741824kB/",
+            41 => "/sys/kernel/mm/hugepages/hugepages-2147483648kB/",
+            42 => "/sys/kernel/mm/hugepages/hugepages-4294967296kB/",
+            43 => "/sys/kernel/mm/hugepages/hugepages-8589934592kB/",
+            44 => "/sys/kernel/mm/hugepages/hugepages-17179869184kB/",
+            45 => "/sys/kernel/mm/hugepages/hugepages-34359738368kB/",
+            46 => "/sys/kernel/mm/hugepages/hugepages-68719476736kB/",
+            47 => "/sys/kernel/mm/hugepages/hugepages-137438953472kB/",
+            48 => "/sys/kernel/mm/hugepages/hugepages-274877906944kB/",
+            49 => "/sys/kernel/mm/hugepages/hugepages-549755813888kB/",
+            50 => "/sys/kernel/mm/hugepages/hugepages-1099511627776kB/",
+            51 => "/sys/kernel/mm/hugepages/hugepages-2199023255552kB/",
+            52 => "/sys/kernel/mm/hugepages/hugepages-4398046511104kB/",
+            53 => "/sys/kernel/mm/hugepages/hugepages-8796093022208kB/",
+            54 => "/sys/kernel/mm/hugepages/hugepages-17592186044416kB/",
+            55 => "/sys/kernel/mm/hugepages/hugepages-35184372088832kB/",
+            56 => "/sys/kernel/mm/hugepages/hugepages-70368744177664kB/",
+            57 => "/sys/kernel/mm/hugepages/hugepages-140737488355328kB/",
+            58 => "/sys/kernel/mm/hugepages/hugepages-281474976710656kB/",
+            59 => "/sys/kernel/mm/hugepages/hugepages-562949953421312kB/",
+            60 => "/sys/kernel/mm/hugepages/hugepages-1125899906842624kB/",
+            61 => "/sys/kernel/mm/hugepages/hugepages-2251799813685248kB/",
+            62 => "/sys/kernel/mm/hugepages/hugepages-4503599627370496kB/",
+            63 => "/sys/kernel/mm/hugepages/hugepages-9007199254740992kB/",
             _ => unreachable!(),
         }
     );
@@ -342,16 +342,22 @@ fn priv_hugepage_supported(exp: usize) -> bool {
 
     let path = get_linux_hugepage_directory!(exp);
 
+    // eprintln!("path: {}", path);
     let mut s = unsafe { uninitialized::<stat>() };
     if unsafe { lstat(path.as_ptr() as *const i8, &mut s) } < 0 {
         // No other error should be possible here (see man 2 lstat)
         let e = errno().0;
+        // eprintln!("error: {:?}", e);
         assert!(e == ENOENT || e == ENOMEM);
         if e == ENOENT {
+            assert_ne!(exp, 21, "path: {}, ENOENT", path);
+            // eprintln!("ENOENT");
             // Maybe we're on an older kernel that doesn't support /sys/kernel/mm/hugepages;
             // it will still support /proc/meminfo, which is what default_hugepage uses.
             default_hugepage() == Some(1 << exp)
         } else {
+            assert_ne!(exp, 21, "path: {}, ENOMEM", path);
+            // eprintln!("ENOMEM");
             false
         }
     } else {
@@ -428,7 +434,7 @@ mod tests {
                 Err(_) => false,
             };
 
-            assert_eq!(supported, hugepage_supported(size));
+            assert_eq!(supported, hugepage_supported(size), "{}-byte pages", size);
         }
     }
 }

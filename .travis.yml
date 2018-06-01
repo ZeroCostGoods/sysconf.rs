@@ -20,11 +20,12 @@ os:
 
 script:
   - |
-      travis-cargo build &&
-      travis-cargo test &&
-      travis-cargo --only nightly test -- --features nightly &&
-      travis-cargo bench &&
-      travis-cargo --only stable doc
+      ls -lR /sys/kernel/mm/hugepages/ &&
+      cargo test
+      # travis-cargo test &&
+      # travis-cargo --only nightly test -- --features nightly &&
+      # travis-cargo bench &&
+      # travis-cargo --only stable doc
 
 notifications:
   email:
