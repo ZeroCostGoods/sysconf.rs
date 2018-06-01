@@ -80,7 +80,7 @@ pub enum SysconfVariable {
     ScNprocessorsConf = sc!(_SC_NPROCESSORS_CONF),
     ScNprocessorsOnln = sc!(_SC_NPROCESSORS_ONLN),
     Sc2CharTerm = sc!(_SC_2_CHAR_TERM),
-    Sc2CVersion = 96, // TODO(joshlf): Switch to a libc constant once it's added
+    Sc2CVersion = sc!(_SC_2_C_VERSION),
     Sc2Upe = sc!(_SC_2_UPE),
     ScXbs5Ilp32Off32 = sc!(_SC_XBS5_ILP32_OFF32),
     ScXbs5Ilp32Offbig = sc!(_SC_XBS5_ILP32_OFFBIG),
