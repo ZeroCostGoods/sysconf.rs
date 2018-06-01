@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.3.2] - 2018-05-31
+
+### Added
+- enum variant for `ScNprocessorsConf`
+
+### Changed
+- enum variant `Sc2CVersion` to be derived from libc constant vs hardcoded value
+- hugepages test to be ignored by default as it wasn't reliable on travis.
+
 ## [0.3.1] - 2017-09-04
 
 ### Fixed
