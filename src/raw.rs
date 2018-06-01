@@ -77,6 +77,7 @@ pub enum SysconfVariable {
     Sc2FortRun = sc!(_SC_2_FORT_RUN),
     Sc2SwDev = sc!(_SC_2_SW_DEV),
     Sc2Localedef = sc!(_SC_2_LOCALEDEF),
+    ScNprocessorsConf = sc!(_SC_NPROCESSORS_CONF),
     ScNprocessorsOnln = sc!(_SC_NPROCESSORS_ONLN),
     Sc2CharTerm = sc!(_SC_2_CHAR_TERM),
     Sc2CVersion = 96, // TODO(joshlf): Switch to a libc constant once it's added
