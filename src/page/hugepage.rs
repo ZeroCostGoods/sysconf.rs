@@ -409,6 +409,7 @@ fn priv_default_hugepage() -> Option<usize> {
 #[cfg(test)]
 mod tests {
     #[test]
+    #[ignore]  // Doesn't work in CI. Run `cargo test --  --ignored` to test locally.
     #[cfg(target_os = "linux")]
     fn test_hugepage_supported() {
         use core::usize::MAX;
