@@ -7,7 +7,7 @@ rust:
   - beta
   - stable
   # Minimum usable version of rust required.
-  - 1.8.0
+  - 1.13.0
 
 # Load travis-cargo
 before_script:
