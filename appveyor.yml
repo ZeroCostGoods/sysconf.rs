@@ -30,12 +30,12 @@ environment:
       TARGET: i686-pc-windows-msvc
       CYGWIN_BASH: C:\Cygwin\bin\bash
       RUST_NIGHTLY: 1
-  # 1.8.0 64-bit MSVC
-    - CHANNEL: 1.8.0
+  # 1.13.0 64-bit MSVC
+    - CHANNEL: 1.13.0
       TARGET: x86_64-pc-windows-msvc
       CYGWIN_BASH: C:\Cygwin64\bin\bash
-  # 1.8.0 32-bit MSVC
-    - CHANNEL: 1.8.0
+  # 1.13.0 32-bit MSVC
+    - CHANNEL: 1.13.0
       TARGET: i686-pc-windows-msvc
       CYGWIN_BASH: C:\Cygwin\bin\bash
 
@@ -59,12 +59,12 @@ environment:
       TARGET: i686-pc-windows-gnu
       CYGWIN_BASH: C:\Cygwin\bin\bash
       RUST_NIGHTLY: 1
-  # 1.8.0 64-bit GNU
-    - CHANNEL: 1.8.0
+  # 1.13.0 64-bit GNU
+    - CHANNEL: 1.13.0
       TARGET: x86_64-pc-windows-gnu
       CYGWIN_BASH: C:\Cygwin64\bin\bash
-  # 1.8.0 32-bit GNU
-    - CHANNEL: 1.8.0
+  # 1.13.0 32-bit GNU
+    - CHANNEL: 1.13.0
       TARGET: i686-pc-windows-gnu
       CYGWIN_BASH: C:\Cygwin\bin\bash
 
