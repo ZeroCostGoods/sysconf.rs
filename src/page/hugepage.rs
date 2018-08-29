@@ -336,14 +336,14 @@ fn priv_hugepage_supported(exp: usize) -> bool {
     // If that fails (possibly because we're on an old kernel version), try the legacy method of
     // parsing /proc/meminfo (described in more detail in legacy_hugepage_supported below).
 
-    use self::libc::{stat, lstat, ENOENT, ENOMEM};
+    use self::libc::{stat, lstat, ENOENT, ENOMEM, c_char};
     use self::errno::errno;
     use core::mem::uninitialized;
 
     let path = get_linux_hugepage_directory!(exp);
 
     let mut s = unsafe { uninitialized::<stat>() };
-    if unsafe { lstat(path.as_ptr() as *const i8, &mut s) } < 0 {
+    if unsafe { lstat(path.as_ptr() as *const c_char, &mut s) } < 0 {
         // No other error should be possible here (see man 2 lstat)
         let e = errno().0;
         assert!(e == ENOENT || e == ENOMEM);
