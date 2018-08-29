@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.3.4] - 2018-08-29
+
+### Fixed
+- Fixed bug where i8 was passed to libc::lstat instead of c_char
+
 ## [0.3.3] - 2018-07-01
 
 ### Fixed

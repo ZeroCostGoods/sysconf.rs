@@ -14,7 +14,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-sysconf = "0.3.3"
+sysconf = "0.3.4"
 ```
 
 and this to your crate root:
