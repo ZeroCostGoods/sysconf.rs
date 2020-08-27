@@ -123,7 +123,7 @@ pub fn hugepage_supported(size: usize) -> bool {
 
 /// Determine whether huge pages of a particular size are supported.
 #[cfg(target_os = "linux")]
-#[cfg_attr(feature = "cargo-clippy", allow(inline_always))]
+#[cfg_attr(feature = "cargo-clippy", allow(clippy::inline_always))]
 #[inline(always)]
 #[cfg(not(feature = "nightly"))]
 pub fn hugepage_supported(size: usize) -> bool {
@@ -338,12 +338,12 @@ fn priv_hugepage_supported(exp: usize) -> bool {
 
     use self::libc::{stat, lstat, ENOENT, ENOMEM, c_char};
     use self::errno::errno;
-    use core::mem::uninitialized;
+    use core::mem::MaybeUninit;
 
     let path = get_linux_hugepage_directory!(exp);
 
-    let mut s = unsafe { uninitialized::<stat>() };
-    if unsafe { lstat(path.as_ptr() as *const c_char, &mut s) } < 0 {
+    let s: MaybeUninit<stat> = unsafe { MaybeUninit::uninit().assume_init() };
+    if unsafe { lstat(path.as_ptr() as *const c_char, &mut s.assume_init()) } < 0 {
         // No other error should be possible here (see man 2 lstat)
         let e = errno().0;
         assert!(e == ENOENT || e == ENOMEM);
@@ -374,7 +374,7 @@ pub fn default_hugepage() -> Option<usize> {
 ///
 /// If no huge pages are supported, `default_hugepage` will return `None`.
 #[cfg(any(target_os = "linux", windows))]
-#[cfg_attr(feature = "cargo-clippy", allow(inline_always))]
+#[cfg_attr(feature = "cargo-clippy", allow(clippy::inline_always))]
 #[inline(always)]
 #[cfg(not(feature = "nightly"))]
 pub fn default_hugepage() -> Option<usize> {

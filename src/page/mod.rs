@@ -24,7 +24,7 @@ pub fn pagesize() -> usize {
 
 /// Get the system's page size.
 #[cfg(any(unix, windows))]
-#[cfg_attr(feature = "cargo-clippy", allow(inline_always))]
+#[cfg_attr(feature = "cargo-clippy", allow(clippy::inline_always))]
 #[inline(always)]
 #[cfg(not(feature = "nightly"))]
 pub fn pagesize() -> usize {
